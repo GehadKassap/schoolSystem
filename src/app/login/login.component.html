@@ -1,1 +1,20 @@
-<p>login works!</p>
+<section id="signIn">
+  <div class="container">
+
+<form [formGroup]="signInData" (ngSubmit)="signInData.valid&&submitData()">
+
+<div class="form w-50 m-auto p-2">
+
+
+ <input [class.is-valid]="signInData.controls.email.status== 'VALID'" type="email" formControlName="email"  class="form-control" placeholder="Enter Your Email">
+ <div *ngIf="signInData.controls.email.errors &&signInData.controls.email.touched" class="alert alert-danger mt-1">Email is not Valid</div>
+
+ <input [class.is-valid]="signInData.controls.password.status== 'VALID'" type="password" formControlName="password"  class="form-control my-4" placeholder="Enter Your Password">
+ <div *ngIf="signInData.controls.password.errors &&signInData.controls.password.touched" class="alert alert-danger mt-1">Password is not Valid</div>
+
+  <button [disabled]="signInData.invalid"  routerLink="/home" class="btn btn-info w-100" >Sign In</button>
+</div>
+</form>
+</div>
+</section>
+

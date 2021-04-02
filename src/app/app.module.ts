@@ -9,6 +9,9 @@ import { DetailsComponent } from './details/details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     DetailsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule ,
+    ReactiveFormsModule,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
